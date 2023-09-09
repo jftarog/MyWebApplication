@@ -6,16 +6,16 @@ namespace MyWebApplication.Models.ViewModel
     {
         [Key]
         public int UserID { get; set; }
-        [Required(ErrorMessage = "User ID is required")]
+        [Required(ErrorMessage = "*")]
         [Display(Name = "Login ID")]
         public string LoginName { get; set; }
-        [Required(ErrorMessage = "Username is required")]
+        [Required(ErrorMessage = "*")]
         [Display(Name = "Password")]
         public string Password { get; set; }
-        [Required(ErrorMessage = "Password is required")]
+        [Required(ErrorMessage = "*")]
         [Display(Name = "First Name")]
         public string FirstName { get; set; }
-        [Required(ErrorMessage = "First Name is required")]
+        [Required(ErrorMessage = "*")]
         [Display(Name = "Last Name")]
         public string LastName { get; set; }
         public string Gender { get; set; }
