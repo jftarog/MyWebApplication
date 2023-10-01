@@ -16,6 +16,7 @@ namespace MyWebApplication.Models.DB
 
         public virtual DbSet<Users> Users { get; set; }
         public virtual DbSet<SystemUsers> SystemUsers { get; set; }
+        public virtual DbSet<YTInfo> YTInfo { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -103,7 +104,38 @@ namespace MyWebApplication.Models.DB
                 entity.Property(e => e.ModifiedDateTime)
                   .HasColumnName("RowModifiedDateTime")
                   .HasDefaultValueSql("CURRENT_TIMESTAMP");
+            });
 
+            modelBuilder.Entity<YTInfo>(entity =>
+            {
+                entity.ToTable("YTInfo");
+
+                entity.Property(e => e.id)
+                  .HasColumnName("id")
+                  .HasColumnType("int");
+
+                entity.Property(e => e.YTLink)
+                  .HasColumnName("YTLink")
+                  .HasMaxLength(255)
+                  .IsUnicode(false);
+
+                entity.Property(e => e.YTTitle)
+                  .HasColumnName("YTTitle")
+                  .HasMaxLength(255)
+                  .IsUnicode(false);
+
+                entity.Property(e => e.YTUploader)
+                  .HasColumnName("YTUploader")
+                  .HasMaxLength(255)
+                  .IsUnicode(false);
+
+                entity.Property(e => e.CreatedDateTime)
+                  .HasColumnName("RowCreatedDateTime")
+                  .HasDefaultValueSql("CURRENT_TIMESTAMP");
+
+                entity.Property(e => e.ModifiedDateTime)
+                  .HasColumnName("RowModifiedDateTime")
+                  .HasDefaultValueSql("CURRENT_TIMESTAMP");
             });
 
         }
