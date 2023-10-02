@@ -7,6 +7,16 @@
       "type": "mssql",
       "connectionId": "ConnectionStrings:MyServer",
       "dynamicId": null
+    },
+    "mssql2": {
+      "type": "mssql",
+      "connectionId": "MyDemoDb",
+      "dynamicId": null
+    },
+    "mssql3": {
+      "type": "mssql",
+      "connectionId": "ConnectionStrings:MyDemoDb",
+      "dynamicId": null
     }
   }
 }
