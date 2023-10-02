@@ -123,13 +123,13 @@ namespace MyWebApplication.Models.EntityManager
             return list;
         }
 
-        /*public bool IsLoginNameExist(string loginName)
+        public bool IsLinkExist(string ytLink)
         {
             using (MyDBContext db = new MyDBContext())
             {
-                return db.YTInfo.Where(u => u.LoginName.Equals(loginName)).Any();
+                return db.YTInfo.Where(u => u.YTLink.Equals(ytLink)).Any();
             }
-        }*/
+        }
 
     }
 }
