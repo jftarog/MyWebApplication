@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Security;
 
 namespace MyWebApplication.Models.ViewModel
 {
@@ -23,6 +24,9 @@ namespace MyWebApplication.Models.ViewModel
         [Display(Name = "Created By")]
 
         public int CreatedBy { get; set; }
+        
+        [Required(AllowEmptyStrings = true)]
+        public string AccountImage { get; set; }
     }
 
     public class UsersModel

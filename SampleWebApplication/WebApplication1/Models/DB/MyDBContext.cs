@@ -25,7 +25,7 @@ namespace MyWebApplication.Models.DB
                 // warning To protect potentially sensitive information in your connection string,
                 // you should move it out of source code.See http://go.microsoft.com/fwlink/?LinkId=723263
                 // for guidance on storing connection strings.
-                optionsBuilder.UseSqlServer("Data Source=(localdb)\\MyServer;Initial Catalog=DemoDB;Integrated Security=True;Multiple Active Result Sets=True");
+                optionsBuilder.UseSqlServer("Data Source=(localdb)\\MyDemoDB;Initial Catalog=DemoDB;Integrated Security=True;Multiple Active Result Sets=True");
             }
         }
 
@@ -73,6 +73,12 @@ namespace MyWebApplication.Models.DB
                 entity.Property(e => e.ModifiedDateTime)
                   .HasColumnName("RowModifiedDateTime")
                   .HasDefaultValueSql("CURRENT_TIMESTAMP");
+
+                entity.Property(e => e.AccountImage)
+                 .HasColumnName("AccountImage")
+                 .HasColumnType("VARCHAR(MAX)")
+                 .IsUnicode(false);
+
 
             });
 

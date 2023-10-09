@@ -3,20 +3,13 @@
     "secrets1": {
       "type": "secrets"
     },
-    "mssql1": {
+    "mssql3": {
       "type": "mssql",
-      "connectionId": "ConnectionStrings:MyServer",
-      "dynamicId": null
+      "connectionId": "ConnectionStrings:MyDemoDb"
     },
     "mssql2": {
       "type": "mssql",
-      "connectionId": "MyDemoDb",
-      "dynamicId": null
-    },
-    "mssql3": {
-      "type": "mssql",
-      "connectionId": "ConnectionStrings:MyDemoDb",
-      "dynamicId": null
+      "connectionId": "MyDemoDb"
     }
   }
 }
