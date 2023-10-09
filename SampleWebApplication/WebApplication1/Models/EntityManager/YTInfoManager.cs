@@ -17,92 +17,52 @@ namespace MyWebApplication.Models.EntityManager
                     YTLink = info.YTLink,
                     YTTitle = info.YTTitle,
                     YTUploader = info.YTUploader,
-                    CreatedBy = 1,
                     CreatedDateTime = DateTime.Now,
-                    ModifiedBy = 1,
                     ModifiedDateTime = DateTime.Now
                 };
 
                 db.YTInfo.Add(newInfo);
                 db.SaveChanges();
-
-                /*int newUserId = db.YTInfo.First(u => u.LoginName == newSysUser.LoginName).UserID;
-
-                Users newUser = new Users
-                {
-                    UserID = newUserId,
-                    FirstName = user.FirstName,
-                    LastName = user.LastName,
-                    Gender = "1",
-                    CreatedBy = 1,
-                    CreatedDateTime = DateTime.Now,
-                    ModifiedBy = 1,
-                    ModifiedDateTime = DateTime.Now
-                };
-
-                db.Users.Add(newUser);
-                db.SaveChanges();*/
             }
         }
 
-        /*public void UpdateUserAccount(UserModel user)
+        public void UpdateYTInfo(YTInfoModel info)
         {
             using (MyDBContext db = new MyDBContext())
             {
                 // Check if a user with the given login name already exists
-                YTInfo existingSysUser = db.YTInfo.FirstOrDefault(u => u.LoginName == user.LoginName);
-                Users existingUser = db.Users.FirstOrDefault(u => u.UserID == existingSysUser.UserID);
+                YTInfo existingLink = db.YTInfo.FirstOrDefault(u => u.YTLink == info.YTLink);
 
-                if (existingSysUser != null && existingUser != null)
+                if (existingLink != null)
                 {
                     // Update the existing user
-                    existingSysUser.ModifiedBy = 1; // This has to be updated
-                    existingSysUser.ModifiedDateTime = DateTime.Now;
-
+                    existingLink.ModifiedDateTime = DateTime.Now;
 
                     // You can also update other properties of the user as needed
-                    existingUser.FirstName = user.FirstName;
-                    existingUser.LastName = user.LastName;
-                    existingUser.Gender = user.Gender;
+                    existingLink.YTLink = info.YTLink;
+                    existingLink.YTTitle = info.YTTitle;
+                    existingLink.YTUploader = info.YTUploader;
 
                     db.SaveChanges();
                 }
                 else
                 {
                     // Add a new user since the user doesn't exist
-                    YTInfo newSysUser = new YTInfo
+                    YTInfo newInfo = new YTInfo
                     {
-                        LoginName = user.LoginName,
-                        CreatedBy = 1,
-                        PasswordEncryptedText = user.Password, // Update this to handle encryption
+                        YTLink = info.YTLink,
+                        YTTitle = info.YTTitle,
+                        YTUploader = info.YTUploader,
                         CreatedDateTime = DateTime.Now,
-                        ModifiedBy = 1,
                         ModifiedDateTime = DateTime.Now
-                    };
+                    };  
 
-                    db.YTInfo.Add(newSysUser);
-                    db.SaveChanges();
-
-                    int newUserId = newSysUser.UserID;
-
-                    Users newUser = new Users
-                    {
-                        UserID = newUserId,
-                        FirstName = user.FirstName,
-                        LastName = user.LastName,
-                        Gender = "1",
-                        CreatedBy = 1,
-                        CreatedDateTime = DateTime.Now,
-                        ModifiedBy = 1,
-                        ModifiedDateTime = DateTime.Now
-                    };
-
-                    db.Users.Add(newUser);
+                    db.YTInfo.Add(newInfo);
                     db.SaveChanges();
                 }
             }
 
-        }*/
+        }
         public YTInfosModel GetAllInfo()
         {
             YTInfosModel list = new YTInfosModel();
@@ -115,8 +75,7 @@ namespace MyWebApplication.Models.EntityManager
                 {
                     YTLink = records.YTLink,
                     YTTitle = records.YTTitle,
-                    YTUploader = records.YTUploader,
-                    CreatedBy = records.CreatedBy
+                    YTUploader = records.YTUploader
                 }).ToList();
             }
 

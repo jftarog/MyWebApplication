@@ -30,4 +30,9 @@ app.MapControllerRoute(
     pattern: "Account/{action=Index}/{id?}", // Updated pattern for the "Account" controller.
     defaults: new {controller = "Account"} );
 
+app.MapControllerRoute(
+    name: "YTInfo",
+    pattern: "YTInfo/{action=Index}/{id?}",
+    defaults: new {controller = "YTInfo"} );
+
 app.Run();

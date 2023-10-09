@@ -2891,11 +2891,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\School Stuff\\College\\3rd Year\\1st Term\\ENTJAVA\\MyWebApplication\\SampleWebApplication\\WebApplication1\\WebApplication1.csproj",
+      "projectUniqueName": "D:\\School Stuff\\College\\3rd Year\\1st Term\\ENTJAVA\\GroupMyWebApp\\MyWebApplication\\SampleWebApplication\\WebApplication1\\WebApplication1.csproj",
       "projectName": "WebApplication1",
-      "projectPath": "D:\\School Stuff\\College\\3rd Year\\1st Term\\ENTJAVA\\MyWebApplication\\SampleWebApplication\\WebApplication1\\WebApplication1.csproj",
+      "projectPath": "D:\\School Stuff\\College\\3rd Year\\1st Term\\ENTJAVA\\GroupMyWebApp\\MyWebApplication\\SampleWebApplication\\WebApplication1\\WebApplication1.csproj",
       "packagesPath": "C:\\Users\\jctar\\.nuget\\packages\\",
-      "outputPath": "D:\\School Stuff\\College\\3rd Year\\1st Term\\ENTJAVA\\MyWebApplication\\SampleWebApplication\\WebApplication1\\obj\\",
+      "outputPath": "D:\\School Stuff\\College\\3rd Year\\1st Term\\ENTJAVA\\GroupMyWebApp\\MyWebApplication\\SampleWebApplication\\WebApplication1\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\jctar\\AppData\\Roaming\\NuGet\\NuGet.Config",

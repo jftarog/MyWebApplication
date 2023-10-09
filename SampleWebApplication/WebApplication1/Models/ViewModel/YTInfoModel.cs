@@ -7,14 +7,8 @@ namespace MyWebApplication.Models.ViewModel
         [Key]
         public int id { get; set; }
         public string YTLink { get; set; }
-        [Required(ErrorMessage = "*")]
-        [Display(Name = "Link")]
         public string YTTitle { get; set; }
-        [Required(ErrorMessage = "*")]
-        [Display(Name = "Title")]
         public string YTUploader { get; set; }
-        [Required(ErrorMessage = "*")]
-        [Display(Name = "Uploader")]
         public int CreatedBy { get; set; }
     }
 
