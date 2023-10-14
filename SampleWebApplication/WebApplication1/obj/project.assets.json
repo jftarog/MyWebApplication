@@ -2886,19 +2886,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\jctar\\.nuget\\packages\\": {}
+    "C:\\Users\\Miori\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\School Stuff\\College\\3rd Year\\1st Term\\ENTJAVA\\GroupMyWebApp\\MyWebApplication\\SampleWebApplication\\WebApplication1\\WebApplication1.csproj",
+      "projectUniqueName": "C:\\Users\\Miori\\Desktop\\2023-2024 Clas\\EntJava\\TeamDelulu\\SampleWebApplication\\WebApplication1\\WebApplication1.csproj",
       "projectName": "WebApplication1",
-      "projectPath": "D:\\School Stuff\\College\\3rd Year\\1st Term\\ENTJAVA\\GroupMyWebApp\\MyWebApplication\\SampleWebApplication\\WebApplication1\\WebApplication1.csproj",
-      "packagesPath": "C:\\Users\\jctar\\.nuget\\packages\\",
-      "outputPath": "D:\\School Stuff\\College\\3rd Year\\1st Term\\ENTJAVA\\GroupMyWebApp\\MyWebApplication\\SampleWebApplication\\WebApplication1\\obj\\",
+      "projectPath": "C:\\Users\\Miori\\Desktop\\2023-2024 Clas\\EntJava\\TeamDelulu\\SampleWebApplication\\WebApplication1\\WebApplication1.csproj",
+      "packagesPath": "C:\\Users\\Miori\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Miori\\Desktop\\2023-2024 Clas\\EntJava\\TeamDelulu\\SampleWebApplication\\WebApplication1\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\jctar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Miori\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2962,7 +2962,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
       }
     }
   }
