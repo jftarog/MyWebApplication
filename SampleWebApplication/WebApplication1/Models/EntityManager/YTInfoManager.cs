@@ -16,7 +16,7 @@ namespace MyWebApplication.Models.EntityManager
                 {
                     YTLink = info.YTLink,
                     YTTitle = info.YTTitle,
-                    YTUploader = info.YTUploader,
+                    Notes = info.Notes,
                     CreatedDateTime = DateTime.Now,
                     ModifiedDateTime = DateTime.Now
                 };
@@ -41,7 +41,7 @@ namespace MyWebApplication.Models.EntityManager
                     // You can also update other properties of the user as needed
                     existingLink.YTLink = info.YTLink;
                     existingLink.YTTitle = info.YTTitle;
-                    existingLink.YTUploader = info.YTUploader;
+                    existingLink.Notes = info.Notes;
 
                     db.SaveChanges();
                 }
@@ -52,7 +52,7 @@ namespace MyWebApplication.Models.EntityManager
                     {
                         YTLink = info.YTLink,
                         YTTitle = info.YTTitle,
-                        YTUploader = info.YTUploader,
+                        Notes = info.Notes,
                         CreatedDateTime = DateTime.Now,
                         ModifiedDateTime = DateTime.Now
                     };  
@@ -75,7 +75,7 @@ namespace MyWebApplication.Models.EntityManager
                 {
                     YTLink = records.YTLink,
                     YTTitle = records.YTTitle,
-                    YTUploader = records.YTUploader
+                    Notes = records.Notes
                 }).ToList();
             }
 

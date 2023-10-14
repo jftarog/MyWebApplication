@@ -11,7 +11,7 @@
             <tr>
                 <th>YTLink</th>
                 <th>YTTitle</th>
-                <th>YTUploader</th>
+                <th>Notes</th>
             </tr>
         </thead>
         <tbody>
@@ -20,8 +20,8 @@
                 <tr>
                     <td>@Html.DisplayFor(m => i.YTLink)</td>
                     <td>@Html.DisplayFor(m => i.YTTitle)</td>
-                    <td>@Html.DisplayFor(m => i.YTUploader)</td>
-                    @* <td><a href="#" class="lnkEdit" data-id="@i.id" data-link="@i.YTLink" data-title="@i.YTTitle" data-uploader="@i.YTUploader" data-gender="@i.Gender">Edit</a></td> *@
+                    <td>@Html.DisplayFor(m => i.Notes)</td>
+                    @* <td><a href="#" class="lnkEdit" data-id="@i.id" data-link="@i.YTLink" data-title="@i.YTTitle" data-uploader="@i.Notes" data-gender="@i.Gender">Edit</a></td> *@
                 </tr>
             }
         </tbody>

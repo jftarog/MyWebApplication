@@ -25,7 +25,7 @@ namespace MyWebApplication.Models.DB
                 // warning To protect potentially sensitive information in your connection string,
                 // you should move it out of source code.See http://go.microsoft.com/fwlink/?LinkId=723263
                 // for guidance on storing connection strings.
-                optionsBuilder.UseSqlServer("Data Source=(localdb)\\MyServer;Initial Catalog=DemoDB;Integrated Security=True;Multiple Active Result Sets=True");
+                optionsBuilder.UseSqlServer("Data Source=(localdb)\\MyDemoDB;Initial Catalog=DemoDB;Integrated Security=True;Multiple Active Result Sets=True");
             }
         }
 
@@ -124,8 +124,8 @@ namespace MyWebApplication.Models.DB
                   .HasMaxLength(255)
                   .IsUnicode(false);
 
-                entity.Property(e => e.YTUploader)
-                  .HasColumnName("YTUploader")
+                entity.Property(e => e.Notes)
+                  .HasColumnName("Notes")
                   .HasMaxLength(255)
                   .IsUnicode(false);
 

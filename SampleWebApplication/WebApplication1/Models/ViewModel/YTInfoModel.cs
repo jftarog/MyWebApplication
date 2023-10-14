@@ -8,7 +8,7 @@ namespace MyWebApplication.Models.ViewModel
         public int id { get; set; }
         public string YTLink { get; set; }
         public string YTTitle { get; set; }
-        public string YTUploader { get; set; }
+        public string Notes { get; set; }
         public int CreatedBy { get; set; }
     }
 
