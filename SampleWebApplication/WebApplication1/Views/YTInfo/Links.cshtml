@@ -95,12 +95,12 @@
             // Make an AJAX request to your API endpoint to update user information
             $.ajax({
                 type: "PUT", // Use the appropriate HTTP method (PUT, POST, etc.) for your API
-                url: "/account/update", // Replace with your API endpoint URL
+                url: "/ytinfo/update", // Replace with your API endpoint URL
                 data: JSON.stringify(linkData),
                 contentType: "application/json; charset=utf-8",
                 success: function (response) {
                     // Handle the API response as needed
-                    console.log("User updated successfully");
+                    console.log("Notes updated successfully");
                     window.location.reload();
                 },
                 error: function (error) {
@@ -124,7 +124,7 @@
     function reloadUserList() {
         $.ajax({
             type: "GET", // Use the appropriate HTTP method for fetching the user list
-            url: "/account/users", // Replace with your API endpoint URL to fetch the user list
+            url: "/ytinfo/links", // Replace with your API endpoint URL to fetch the user list
             success: function (data) {
                 // Replace the user list container with the updated user list HTML
                 userListContainer.html(data);
