@@ -86,7 +86,7 @@
         $("#saveChanges").click(function () {
 
             // Create a JavaScript object with the updated user data
-            var userData = {
+            var linkData = {
                 Notes: editNotes.val(),
                 YTTitle: editYTTitle.val()
             };
@@ -96,7 +96,7 @@
             $.ajax({
                 type: "PUT", // Use the appropriate HTTP method (PUT, POST, etc.) for your API
                 url: "/account/update", // Replace with your API endpoint URL
-                data: JSON.stringify(userData),
+                data: JSON.stringify(linkData),
                 contentType: "application/json; charset=utf-8",
                 success: function (response) {
                     // Handle the API response as needed
