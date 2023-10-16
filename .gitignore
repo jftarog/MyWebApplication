@@ -1,4 +1,6 @@
 .vs/
+.vscode/
 SampleWebApplication/.vs/
+SampleWebApplication/.vscode/
 SampleWebApplication/WebApplication1/bin
 SampleWebApplication/WebApplication1/obj
