@@ -6,6 +6,7 @@ namespace MyWebApplication.Models.ViewModel
     {
         [Key]
         public int id { get; set; }
+        [Required(ErrorMessage = "*")]
         public string YTLink { get; set; }
         public string YTTitle { get; set; }
         public string Notes { get; set; }

@@ -38,12 +38,12 @@ namespace MyWebApplication.Controllers
         }
 
         [HttpPut]
-        public async Task<ActionResult> Update([FromBody] YTInfoModel YTInfoData)
+        public async Task<ActionResult> Update([FromBody] YTInfoModel ytinfoData)
         {
             YTInfoManager um = new YTInfoManager();
-            if (um.IsLinkExist(YTInfoData.YTLink))
+            if (um.IsLinkExist(ytinfoData.YTLink))
             {
-                um.UpdateYTInfo(YTInfoData);
+                um.UpdateYTInfo(ytinfoData);
                 return RedirectToAction("Index"); // Redirect to a relevant action after successful update.
             }
             // Handle the case when the login name doesn't exist, e.g., return a relevant error view.

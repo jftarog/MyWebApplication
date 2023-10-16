@@ -126,7 +126,7 @@ namespace MyWebApplication.Models.DB
 
                 entity.Property(e => e.Notes)
                   .HasColumnName("Notes")
-                  .HasMaxLength(255)
+                  .HasColumnType("varchar(255)")
                   .IsUnicode(false);
 
                 entity.Property(e => e.CreatedDateTime)

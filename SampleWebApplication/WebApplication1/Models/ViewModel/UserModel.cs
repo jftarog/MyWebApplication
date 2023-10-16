@@ -21,7 +21,6 @@ namespace MyWebApplication.Models.ViewModel
         public string Gender { get; set; }
         [Required(ErrorMessage = "*")]
         [Display(Name = "Created By")]
-
         public int CreatedBy { get; set; }
     }
 

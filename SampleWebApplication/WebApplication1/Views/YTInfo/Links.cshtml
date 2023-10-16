@@ -21,7 +21,7 @@
                     <td>@Html.DisplayFor(m => i.YTLink)</td>
                     <td>@Html.DisplayFor(m => i.YTTitle)</td>
                     <td>@Html.DisplayFor(m => i.Notes)</td>
-                    <td><a href="#" class="lnkEdit" data-id="@i.id" data-title="@i.YTTitle" data-notes="@i.Notes">Edit</a></td>
+                    <td><a href="#" class="lnkEdit" data-id="@i.id" data-link="@i.YTLink" data-title="@i.YTTitle" data-notes="@i.Notes">Edit</a></td>
                 </tr>
             }
         </tbody>
@@ -38,6 +38,10 @@
             <div class="modal-body">
                 <form>
                     <input type="hidden" id="editId" />
+                    <div class="form-group">
+                        <label for="editYTLink">YoutubeLink:</label>
+                        <input type="text" class="form-control" id="editYTLink" readonly>
+                    </div>
                     <div class="form-group">
                         <label for="editYTTitle">YoutubeTitle:</label>
                         <input type="text" class="form-control" id="editYTTitle" readonly>
@@ -64,19 +68,22 @@
      $(document).ready(function () {
         var editModal = $(".edit-modal");
         var editId = $("#editId");
-        var editNotes = $("#editNotes");
+        var editYTLink = $("#editYTLink");
         var editYTTitle = $("#editYTTitle");
+        var editNotes = $("#editNotes");
 
         // Click event for "Edit" links
         $(".lnkEdit").click(function () {
-            var Notes = $(this).data("notes");
             var Id =  $(this).data("id");
-            var YTTitle = $(this).data("YTTitle");
+            var YTLink = $(this).data("link");
+            var YTTitle = $(this).data("title");
+            var Notes = $(this).data("notes");
 
             // Populate the modal with user data
             editId.val(Id);
-            editNotes.val(Notes);
+            editYTLink.val(YTLink);
             editYTTitle.val(YTTitle);
+            editNotes.val(Notes);
 
             // Show the modal
             editModal.modal("show");
@@ -87,7 +94,9 @@
 
             // Create a JavaScript object with the updated user data
             var linkData = {
+                id: editId.val(),
                 Notes: editNotes.val(),
+                YTLink: editYTLink.val(),
                 YTTitle: editYTTitle.val()
             };
 
@@ -95,7 +104,7 @@
             // Make an AJAX request to your API endpoint to update user information
             $.ajax({
                 type: "PUT", // Use the appropriate HTTP method (PUT, POST, etc.) for your API
-                url: "/ytinfo/update", // Replace with your API endpoint URL
+                url: "/YTInfo/update", // Replace with your API endpoint URL
                 data: JSON.stringify(linkData),
                 contentType: "application/json; charset=utf-8",
                 success: function (response) {
@@ -108,7 +117,7 @@
                     console.error("Error updating user:", error);
                     window.location.reload();
                 }
-            });
+            }); 
 
             // Close the modal
             editModal.modal("hide");
@@ -124,7 +133,7 @@
     function reloadUserList() {
         $.ajax({
             type: "GET", // Use the appropriate HTTP method for fetching the user list
-            url: "/ytinfo/links", // Replace with your API endpoint URL to fetch the user list
+            url: "/YTInfo/Links", // Replace with your API endpoint URL to fetch the user list
             success: function (data) {
                 // Replace the user list container with the updated user list HTML
                 userListContainer.html(data);
