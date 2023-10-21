@@ -25,7 +25,7 @@ namespace MyWebApplication.Models.DB
                 // warning To protect potentially sensitive information in your connection string,
                 // you should move it out of source code.See http://go.microsoft.com/fwlink/?LinkId=723263
                 // for guidance on storing connection strings.
-                optionsBuilder.UseSqlServer("use your own current database connection");
+                optionsBuilder.UseSqlServer("Data Source=(localdb)\\MyDemoDB;Initial Catalog=DemoDB;Integrated Security=True;Multiple Active Result Sets=True");
             }
         }
 
