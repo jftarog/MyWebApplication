@@ -95,7 +95,7 @@ namespace MyWebApplication.Controllers
                         HttpContext.SignInAsync(principal);
 
                         // Redirect to the desired action (e.g., "Users")
-                        return RedirectToAction("Users");
+                        return RedirectToAction("Index");
                     }
                     else
                     {
