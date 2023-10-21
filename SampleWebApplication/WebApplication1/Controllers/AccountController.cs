@@ -80,7 +80,7 @@ namespace MyWebApplication.Controllers
                 }
                 else
                 {
-                    if (ulm.Password.Equals(ulm.Password))
+                    if (um.GetUserPassword(ulm.LoginName).Equals(ulm.Password))
                     {
                         var claims = new List<Claim>
                     {
