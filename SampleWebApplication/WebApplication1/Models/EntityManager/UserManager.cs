@@ -202,5 +202,35 @@ namespace MyWebApplication.Models.EntityManager
                 return false;
             }
         }
-    }
+
+        public UsersModel GetUser(int userID)
+        {
+            UsersModel profile = new UsersModel();
+            
+            using (MyDBContext db = new MyDBContext()) 
+            {
+                var user = from u in db.Users
+                            join us in db.SystemUsers
+                                on u.UserID equals us.UserID
+                            join ur in db.UserRole
+                                on u.UserID equals ur.UserID
+                            join r in db.Role
+                                on ur.LookUpRoleID equals r.RoleID
+                            where u.UserID == userID
+                            select new { u, us, r, ur };
+                profile.Users = user.Select(records => new UserModel()
+                {
+                    LoginName = records.us.LoginName,
+                    FirstName = records.u.FirstName,
+                    LastName = records.u.LastName,
+                    Gender = records.u.Gender,
+                    CreatedBy = records.u.CreatedBy,
+                    AccountImage = records.u.AccountImage ?? string.Empty,
+                    RoleID = records.ur.LookUpRoleID,
+                    RoleName = records.r.RoleName
+                }).ToList();
+            }
+            return profile;
+        }
+    }
 }

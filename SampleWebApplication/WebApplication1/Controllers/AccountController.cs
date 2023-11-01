@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration.UserSecrets;
 using Microsoft.IdentityModel.Tokens;
+using MyWebApplication.Models.DB;
 using MyWebApplication.Models.EntityManager;
 using MyWebApplication.Models.ViewModel;
 using MyWebApplication.Security;
@@ -18,17 +20,14 @@ namespace MyWebApplication.Controllers
         //public SignInManager<string> _signInManager;
         public ActionResult Login()
         {
-
             return View();
         }
 
         [AuthorizeRoles("Admin")]
         public ActionResult Users()
         {
-
             UserManager um = new UserManager();
             UsersModel user = um.GetAllUsers();
-
             return View(user);
         }
 
@@ -113,6 +112,22 @@ namespace MyWebApplication.Controllers
         {
             HttpContext.SignOutAsync();
             return RedirectToAction("Index", "Home");
+        }
+    
+        [AuthorizeRoles("Admin","Member")]
+        public ActionResult Profile(UserModel user)
+        {
+            using (MyDBContext db = new MyDBContext())
+            {
+                UserManager um = new UserManager();
+                int userID = db.SystemUsers.FirstOrDefault(u => u.LoginName == User.Identity.Name).UserID;
+                UsersModel userProfile = um.GetUser(userID);
+                if (userProfile == null)
+                {
+                    return NotFound();
+                }
+                return View(userProfile);
+            }
         }
     }
 }

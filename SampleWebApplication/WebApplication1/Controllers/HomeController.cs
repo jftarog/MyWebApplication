@@ -15,7 +15,14 @@ namespace WebApplication1.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            if (User.Identity.IsAuthenticated)
+            {
+                return RedirectToAction("Profile", "Account");
+            }
+            else 
+            { 
+                return RedirectToAction("Login", "Account");
+            }
         }
 
         public IActionResult Privacy()
