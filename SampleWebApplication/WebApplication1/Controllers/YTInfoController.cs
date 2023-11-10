@@ -1,6 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration.UserSecrets;
+using Microsoft.IdentityModel.Tokens;
+using MyWebApplication.Models.DB;
 using MyWebApplication.Models.EntityManager;
 using MyWebApplication.Models.ViewModel;
+using MyWebApplication.Security;
+using System.Security.Claims;
 
 namespace MyWebApplication.Controllers
 {
@@ -11,6 +17,7 @@ namespace MyWebApplication.Controllers
             return View();
         }
 
+        [AuthorizeRoles("Admin")]
         public ActionResult Links()
         {
             YTInfoManager um = new YTInfoManager();
