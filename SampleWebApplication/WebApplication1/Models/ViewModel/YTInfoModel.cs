@@ -15,8 +15,8 @@ namespace MyWebApplication.Models.ViewModel
         [Display(Name = "YTTitle")]
         public string YTTitle { get; set; }
         [Required(ErrorMessage = "*")]
-        [StringLength(55, ErrorMessage = "Maximum length is 55 characters.")]
-        [Display(Name = "YTTitle")]
+        [StringLength(255, ErrorMessage = "Maximum length is 55 characters.")]
+        [Display(Name = "Notes")]
         public string Notes { get; set; }
         public int CreatedBy { get; set; }
     }
